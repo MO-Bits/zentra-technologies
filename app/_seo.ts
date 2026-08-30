@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const siteName = "Zentra Technologies";
 export const legalName = "Zentra Technologies Ltd";
-export const siteUrl = "https://zentra.co.tz";
+export const siteUrl = "https://www.zentra.co.tz";
 export const defaultDescription =
   "Zentra Technologies is a Tanzanian software and engineering company building digital products, automation, AI and research-led systems for real operations.";
 
