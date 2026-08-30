@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight, ZentraMark } from "./_components/brand";
 import { buildSteps, capabilities, industries, products } from "./_data";
 
@@ -83,7 +84,13 @@ export default function Home() {
       <section className="build-section">
         <div className="section-width build-layout">
           <figure className="brand-visual">
-            <img src="/zentra-connected-systems.webp" alt="Abstract network showing connected technology systems" width="1536" height="1024" loading="lazy" decoding="async" />
+            <Image
+              src="/zentra-connected-systems.webp"
+              alt="Abstract network showing connected technology systems"
+              width={1536}
+              height={1024}
+              sizes="(max-width: 900px) 100vw, 50vw"
+            />
             <figcaption><span>Systems, not isolated features</span><span>Zentra engineering model</span></figcaption>
           </figure>
           <div className="build-content">

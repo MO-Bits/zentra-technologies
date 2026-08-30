@@ -1,11 +1,13 @@
-import type { Metadata } from "next";
+import Link from "next/link";
 import { ArrowRight } from "../_components/brand";
 import { capabilities } from "../_data";
+import { createPageMetadata } from "../_seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Capabilities",
   description: "Software, automation, AI, engineering, research and technology services from Zentra Technologies.",
-};
+  path: "/capabilities",
+});
 
 const lifecycle = [
   ["01", "Understand", "Map the users, decisions, constraints and existing operation."],
@@ -21,7 +23,7 @@ export default function CapabilitiesPage() {
       <section className="subpage-hero route-hero">
         <div className="section-width route-hero-layout">
           <div>
-            <nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><strong>Capabilities</strong></nav>
+            <nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><strong>Capabilities</strong></nav>
             <p className="eyebrow"><span /> Product · Engineering · Research</p>
             <h1>We build beyond<br /><em>the interface.</em></h1>
           </div>

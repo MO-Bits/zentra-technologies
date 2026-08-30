@@ -1,10 +1,12 @@
-import type { Metadata } from "next";
+import Link from "next/link";
 import { ArrowRight, ZentraMark } from "../_components/brand";
+import { createPageMetadata } from "../_seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "About",
   description: "Learn about Zentra Technologies Ltd, a Tanzanian software, engineering and innovation company building practical systems for real operations.",
-};
+  path: "/about",
+});
 
 const principles = [
   ["01", "Useful before impressive", "A product earns its place by making important work clearer, safer or more efficient."],
@@ -18,7 +20,7 @@ export default function AboutPage() {
     <main id="main-content" className="subpage about-page">
       <section className="subpage-hero route-hero about-route-hero">
         <div className="section-width route-hero-layout">
-          <div><nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><strong>About</strong></nav><p className="eyebrow"><span /> Zentra Technologies Ltd</p><h1>A technology company<br /><em>built from real problems.</em></h1></div>
+          <div><nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><strong>About</strong></nav><p className="eyebrow"><span /> Zentra Technologies Ltd</p><h1>A technology company<br /><em>built from real problems.</em></h1></div>
           <p className="subpage-lead">We develop and commercialise practical software, engineering and research-led technologies for organisations, institutions and communities.</p>
         </div>
       </section>

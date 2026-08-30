@@ -1,10 +1,12 @@
-import type { Metadata } from "next";
+import Link from "next/link";
 import { ArrowRight } from "../_components/brand";
+import { createPageMetadata } from "../_seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Industries",
   description: "Zentra Technologies develops locally relevant systems for hospitality, logistics, healthcare, education, business and public institutions.",
-};
+  path: "/industries",
+});
 
 const sectors = [
   { code: "01", name: "Hospitality", focus: "Property and guest operations", challenge: "Bookings, availability, guests, rooms and staff must stay coordinated throughout the day.", response: "Connected hospitality workflows that give each property a reliable operational picture.", product: "Loji Business", url: "/products/loji-business" },
@@ -20,7 +22,7 @@ export default function IndustriesPage() {
     <main id="main-content" className="subpage industries-page">
       <section className="subpage-hero route-hero industries-route-hero">
         <div className="section-width route-hero-layout">
-          <div><nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><strong>Industries</strong></nav><p className="eyebrow"><span /> Technology in context</p><h1>Built around how<br /><em>the work happens.</em></h1></div>
+          <div><nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><strong>Industries</strong></nav><p className="eyebrow"><span /> Technology in context</p><h1>Built around how<br /><em>the work happens.</em></h1></div>
           <p className="subpage-lead">Sector knowledge changes the quality of every technology decision. We start with the operation, then engineer the system around it.</p>
         </div>
       </section>

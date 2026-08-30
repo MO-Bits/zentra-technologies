@@ -1,14 +1,38 @@
+import Link from "next/link";
 import type { Product } from "../_data";
+import { legalName, siteUrl } from "../_seo";
 import { ArrowRight, ArrowUpRight } from "./brand";
 
 export function ProductDetail({ product }: { product: Product }) {
+  const productUrl = `${siteUrl}/products/${product.slug}`;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": `${productUrl}/#software`,
+    name: product.name,
+    description: product.longDescription,
+    url: productUrl,
+    applicationCategory: product.category,
+    operatingSystem: "Web",
+    creator: {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: legalName,
+    },
+    ...(product.externalUrl ? { sameAs: product.externalUrl } : {}),
+  };
+
   return (
     <main id="main-content" className="subpage product-detail">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <section className="subpage-hero product-hero">
         <div className="section-width product-hero-layout">
           <div className="product-hero-copy">
             <nav className="breadcrumbs" aria-label="Breadcrumb">
-              <a href="/">Home</a><span>/</span><a href="/products">Products</a><span>/</span><strong>{product.name}</strong>
+              <Link href="/">Home</Link><span>/</span><a href="/products">Products</a><span>/</span><strong>{product.name}</strong>
             </nav>
             <div className="detail-status"><i /> {product.status}</div>
             <p className="eyebrow"><span /> {product.eyebrow}</p>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ZentraMark } from "./brand";
 
 export function SiteFooter() {
@@ -5,10 +6,10 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="section-width footer-top">
         <div className="footer-brand">
-          <a className="brand brand--dark" href="/" aria-label="Zentra Technologies home">
+          <Link className="brand brand--dark" href="/" aria-label="Zentra Technologies home">
             <ZentraMark compact />
             <span>Zentra</span>
-          </a>
+          </Link>
           <p>Practical technology.<br />Engineered for real operations.</p>
         </div>
         <nav aria-label="Footer company links">

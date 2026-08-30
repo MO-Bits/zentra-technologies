@@ -33,8 +33,12 @@
   "exclude": [
     "node_modules",
     "build",
+    "components",
     "db",
+    "dist",
     "examples",
+    "hooks",
+    "lib",
     "worker",
     "drizzle.config.ts",
     "vite.config.ts"

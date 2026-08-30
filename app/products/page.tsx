@@ -1,11 +1,13 @@
-import type { Metadata } from "next";
+import Link from "next/link";
 import { products } from "../_data";
 import { ArrowRight } from "../_components/brand";
+import { createPageMetadata } from "../_seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Products",
   description: "Explore Loji Business, Pasel and Zentra WorkOS—focused operating systems developed by Zentra Technologies.",
-};
+  path: "/products",
+});
 
 export default function ProductsPage() {
   return (
@@ -13,7 +15,7 @@ export default function ProductsPage() {
       <section className="subpage-hero route-hero">
         <div className="section-width route-hero-layout">
           <div>
-            <nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><strong>Products</strong></nav>
+            <nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><strong>Products</strong></nav>
             <p className="eyebrow"><span /> Zentra product portfolio</p>
             <h1>Three products.<br /><em>One way of thinking.</em></h1>
           </div>

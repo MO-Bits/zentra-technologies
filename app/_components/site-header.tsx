@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowRight, ZentraMark } from "./brand";
 
@@ -17,10 +18,10 @@ export function SiteHeader() {
   return (
     <header className="global-header">
       <div className="site-header">
-        <a className="brand" href="/" aria-label="Zentra Technologies home">
+        <Link className="brand" href="/" aria-label="Zentra Technologies home">
           <ZentraMark compact />
           <span>Zentra</span>
-        </a>
+        </Link>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
           {navigation.map(([label, href]) => <a href={href} key={href} aria-current={isCurrent(href) ? "page" : undefined}>{label}</a>)}
